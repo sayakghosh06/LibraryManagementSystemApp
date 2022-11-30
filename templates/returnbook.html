@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<div class="container text-center my-3">
+  <h1 class = "text-center my-3">Here You Can Return Book!</h1>
+  <hr>
+
+
+  {% for msg in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hey,</strong> {{msg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {%endfor%}
+
+
+
+  <form action="return_book" method="post">
+    {% csrf_token %}
+    <label for="Member_id">Member Id</label><br>
+    <input type="number" id="Member_id" name="Member_id" placeholder="Enter Member Id"><br>
+    <label for="Book_id">Book Id</label><br>
+
+    <input type="number" id="Book_id" name = "Book_id" placeholder="Enter Member Id" ><br>
+    <label for="Copies">No of Copies</label><br>
+    <input type="number" id="Copies" name="Copies" placeholder="Enter No Of Copies"><br>
+    
+
+    <hr>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+
+
+
+{% endblock body %}

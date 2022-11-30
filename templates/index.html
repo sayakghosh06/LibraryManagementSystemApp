@@ -1,0 +1,63 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container text-center my-3">
+
+<h2 class = "text-center my-3"> Library Management System </h2>
+<hr>
+
+<div class="container text-center my-3">
+
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Book Details
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="add_book">Add New Book</a>
+    <a class="dropdown-item" href="search_book">Search a Book</a>
+    
+  </div>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Transaction
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="issue_book">Issue a Book</a>
+    <a class="dropdown-item" href="return_book">Return a Book</a>
+
+  </div>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Member Details
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="add_member">Add New Member</a>
+    <a class="dropdown-item" href="search_member">Search a Member</a>
+
+  </div>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Reports
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="search_book">Book Details</a>
+    <a class="dropdown-item" href="search_member">Member Details</a>
+    <a class="dropdown-item" href="issue_details">Issue Details</a>
+    <a class="dropdown-item" href="return_details">Return Details </a>
+
+</div>
+
+
+</div>
+
+</div>
+  
+{% endblock body %}
+

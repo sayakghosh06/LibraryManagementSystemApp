@@ -1,0 +1,63 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container text-center my-3">
+  <h2 class = "text-center my-3">All The List Of Books</h2>
+  <hr>
+
+  <form class="form-inline" method="get" action="search_book">
+    <label class="sr-only" for="inlineFormInputName2">Name</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="searchname" placeholder="Enter Book Name ">
+     
+    <button type="submit" class="btn btn-success mb-2">Search</button>
+  </form>
+
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Book Id</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Copies</th>
+            <th scope="col">Remaining Copies</th>
+            <th scope="col">Action</th>
+            <th scope="col">Action</th>
+            
+
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for b in Books %}
+        
+        
+         <tr>
+            <td>{{b.Book_id}}</td>
+            <td>{{b.Book_Name}}</td>
+            <td>{{b.Author_Name}}</td>
+            <td>{{b.Price}}</td>
+            <td>{{b.Copies}}</td>   
+            <td>{{b.Remaining_Copies}}</td>        
+            <td><a class="btn btn-danger" href="delete_book{{b.Book_id}}" role="button">Delete</a></td>
+            <td><a class="btn btn-success" href="edit_book{{b.Book_id}}" role="button">Update</a></td>
+            
+
+        
+
+        </tr>
+
+
+         {% endfor %}
+         
+        </tbody>
+      </table>
+
+</div>
+
+  
+{% endblock body %}
+

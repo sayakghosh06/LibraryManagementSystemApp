@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<h2 class = "text-center my-3"> All the List of Members </h2>
+<div class="container my-3">
+  <hr>
+
+  <form class="form-inline" method="get" action="search_member">
+    <label class="sr-only" for="inlineFormInputName2">Name</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="searchname" placeholder="Enter Member Name ">
+     
+    <button type="submit" class="btn btn-success mb-2">Search</button>
+  </form>
+
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Member Id</th>
+            <th scope="col">Member Name</th>
+            <th scope="col">Member Address</th>
+            <th scope="col">Phone</th>            
+            <th scope="col">Action</th> 
+            <th scope="col">Action</th> 
+
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for m in Members %}
+        
+         <tr>
+            <td>{{m.Member_id}}</td>
+            <td>{{m.Member_Name}}</td>
+            <td>{{m.Member_Address}}</td>
+            <td>{{m.Phone}}</td>
+            
+            <td><a class="btn btn-danger" href="delete_member{{m.Member_id}}" role="button">Delete</a></td>
+            <td><a class="btn btn-success" href="edit_member{{m.Member_id}}" role="button">Update</a></td>
+            
+
+        
+
+        </tr>
+
+
+         {% endfor %}
+        </tbody>
+      </table>
+
+</div>
+
+{% endblock body %}

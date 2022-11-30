@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="containe mx-8" >
+
+<h2 class="text-center">Enter The Details to Edit Member 
+
+</div>
+<div class="container">
+
+
+<form method="post" action="do_edit_member{{m.Member_id}}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="Member_Name" class="form-label">Member Name</label>
+    <input type="text" class="form-control" id="Member_Name" aria-describedby="emailHelp" name = "Member_Name" placeholder="Enter Member Name" value="{{m.Member_Name}}">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Member Address</label>
+    <input type="text" class="form-control" id="Member_Address" name="Member_Address" placeholder="Enter Member_Address" value="{{m.Member_Address}}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Phone</label>
+    <input type="number" class="form-control" id="Phone" name="Phone" placeholder="Enter Phone Number of Member" value="{{m.Phone}}">
+  </div>
+  
+
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+
+{% endblock body %}

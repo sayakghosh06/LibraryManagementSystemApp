@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container text-center my-3">
+
+<h2 class="text-center my-3">Enter The Details To Add New Member </h2>
+<hr>
+
+</div>
+<div class="container">
+
+  {% for msg in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hey,</strong> {{msg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {%endfor%}
+
+
+<form method="post" action="/add_member">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="Member_Name" class="form-label">Member Name</label>
+    <input type="text" class="form-control" id="Member_Name" aria-describedby="emailHelp" name = "Member_Name" placeholder="Enter Member Name">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Member Address</label>
+    <input type="text" class="form-control" id="Member_Address" name="Member_Address" placeholder="Enter Member_Address">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Phone</label>
+    <input type="number" class="form-control" id="Phone" name="Phone" placeholder="Enter Phone Number of Member">
+  </div>
+  
+
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+
+{% endblock body %}

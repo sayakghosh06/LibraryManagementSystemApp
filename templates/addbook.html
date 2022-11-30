@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container text-center my-3">
+
+<h2 class="text-center my-3">Enter The Details to Add New Book </h2>
+
+  <hr>
+
+</div>
+<div class="container">
+
+  {% for msg in messages%}
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Hey,</strong> {{msg}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  {%endfor%}
+
+
+<form method="post" action="/add_book">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="Book_Name" class="form-label">Book Name</label>
+    <input type="text" class="form-control" id="Book_Name" aria-describedby="emailHelp" name = "Book_Name" placeholder="Enter Book Name">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Author</label>
+    <input type="text" class="form-control" id="author" name="author" placeholder="Enter Author Name">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Price</label>
+    <input type="number" class="form-control" id="Price" name="price" placeholder="Enter Price of the Book">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">No of Copies</label>
+    <input type="number" class="form-control" id="Copies" name ="Copies" placeholder="Enter no of Copies">
+  </div>
+
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+
+
+{% endblock body %}

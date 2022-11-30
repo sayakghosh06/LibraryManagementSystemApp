@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+<h2 class = "text-center my-3"> All the Issue Details </h2>
+
+
+<div class="container">
+
+  
+
+
+  <form class="form-inline" method="get" action="issue_details">
+    <label class="sr-only" for="inlineFormInputName2">Name</label>
+    <input type="text" class="form-control mb-2 mr-sm-2" id="inlineFormInputName2" name="searchname" placeholder="Enter Book or Member ">
+     
+    <button type="submit" class="btn btn-primary mb-2">Search</button>
+  </form>
+
+
+
+
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Issue Id</th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">Member Name</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Copies</th>              
+            
+          </tr>
+        </thead>
+        <tbody>
+
+        {% for i in issues %}
+        
+         <tr>
+            <td>{{i.Issue_id}}</td>
+            <td>{{i.Issuedate}}</td>
+            <td>{{i.Member.Member_Name}}</td>
+            <td>{{i.Book.Book_Name}}</td>
+            <td>{{i.Copies}}</td>
+
+            
+            
+
+        
+
+        </tr>
+
+
+         {% endfor %}
+        </tbody>
+      </table>
+
+</div>
+
+{% endblock body %}

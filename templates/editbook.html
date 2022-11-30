@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block body %}
+<div class="containe mx-8" >
+
+<h2 class="text-center">Enter The Details to Update the Book 
+
+</div>
+<div class="container">
+
+
+ 
+
+<form method="post" action="/do_edit_book{{b.Book_id}}">
+  {% csrf_token %}
+  <div class="mb-3">
+    <label for="Book_Name" class="form-label">Book Name</label>
+    <input type="text" class="form-control" id="Book_Name" aria-describedby="emailHelp" name = "Book_Name" placeholder="Enter Book Name" value="{{b.Book_Name}}">
+    
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Author</label>
+    <input type="text" class="form-control" id="author" name="author" placeholder="Enter Author Name" value="{{b.Author_Name}}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Price</label>
+    <input type="number" class="form-control" id="Price" name="price" placeholder="Enter Price of the Book" value="{{b.Price}}"">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">No of Copies</label>
+    <input type="number" class="form-control" id="Copies" name ="Copies" placeholder="Enter no of Copies" value="{{b.Copies}}"">
+  </div>
+
+  
+  <button type="submit" class="btn btn-primary">Update Book</button>
+</form>
+
+</div>
+
+
+
+
+{% endblock body %}
