@@ -1,11 +1,10 @@
-﻿# LibraryManagementSystemApp
-• Developed the web application using Django and Bootstrap.
+﻿# Library Management System Application
+• Developed the web application using Django web framework.
 
-• It has CRUD operations for Employees.
+• It has CRUD operations for Users and Books.
 
-• Users can filter employee details by employee name, department and role.
+• Users can rent book from the library.
 
-• Tech Used- Python Django, Bootstrap, SqlLite, Html
 
 
 
